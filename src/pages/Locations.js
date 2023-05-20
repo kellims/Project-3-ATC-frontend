@@ -49,6 +49,44 @@ function Locations() {
         )
     }
 
+    function handleChange(e) {
+        console.log(e.target);
+        setLocationsForm((previousFormState) => ({
+            ...previousFormState,
+            [e.target.name]: e.target.value
+        }))
+    }
+
+    async function handleSumbit(e) {
+        try {
+            e.preventDefault();
+            await fetch('http://localhost:4000/locations', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(locationsForm)
+            })
+            getLocations();
+            e.target.reset();
+        } catch(err) {
+            console.log(err);
+        }
+    }
+
+    return(
+        <>
+            <form onSubmit={handleSumbit}>
+                <label>Location Name: </label>
+                <input type="text" name="location" onChange={handleChange} placeholder="Location Name"/>
+                <label>Author: </label>
+                <input type="text" name="date" onChange={handleChange} placeholder="Date of Trip"/>
+                <button>Submit</button>
+            </form>
+            {locations.length ? loaded(locations) : <h2>Loading...</h2>}
+        </>
+    )
+
   }
 
 
