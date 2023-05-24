@@ -35,7 +35,7 @@ function LocationsIndex() {
                 {arr.map((locations, idx) => {
                     return(
                         <div key={idx}>
-                            <Link to={`/locations/${locations._id}`}>
+                            <Link to={`/locations/${locations._id}`} key={ locations._id }>
                                 <h2>Location: {locations.place}</h2>
                             </Link>
                             <h3>Date: {locations.date}</h3>

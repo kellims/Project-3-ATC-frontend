@@ -15,6 +15,7 @@ function App() {
         <Header />
         <Routes>
           <Route path='/locations' element={<Locations />} />
+          <Route path="/locations/:id" element={ <Information />} />
           </Routes>
         <Footer />
     </div>
