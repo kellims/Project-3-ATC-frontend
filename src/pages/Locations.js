@@ -82,6 +82,8 @@ function LocationsIndex() {
                 <input type="text" name="place" onChange={handleChange} placeholder="Location Name"/>
                 <label>Date of trip: </label>
                 <input type="text" name="date" onChange={handleChange} placeholder="Date of Trip"/>
+                <label>Photo: </label>
+                <input type="text" name="img" onChange={handleChange} placeholder="Photo of Location"/>
                 <button>Submit</button>
             </form>
             {locations.length ? loaded(locations) : <h2>Loading...</h2>}
