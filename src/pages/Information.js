@@ -1,9 +1,7 @@
 
 //Show page for each Location
 import { useState, useEffect } from "react";
-import { useParams } from "react-router";
-
-// import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom';
 
 
 function Information() {
@@ -33,6 +31,26 @@ function Information() {
 
   console.log(locationInfo)
 
+  const navigate = useNavigate()
+
+  const removeLocation = async () => {
+    try {
+      const options = {
+        method: "DELETE"
+      }
+
+      const response = await fetch(URL, options)
+      const deletedLocation = await response.json()
+      console.log(deletedLocation)
+      navigate('')
+    
+    } catch (error) {
+      console.log(error)
+      navigate(URL)
+    }
+
+  }
+
   function locationLoaded() {
     return (
       <>
@@ -41,6 +59,9 @@ function Information() {
       <img src={locationInfo.img} alt={locationInfo.place+" image"} />
       <h2>Location: {locationInfo.place}</h2>
       <h2>Photo: {locationInfo.date}</h2>
+      <div>
+        <button className="delete" onClick={removeLocation}> Remove Location</button>
+      </div>
       </div>
       </>
     )
@@ -59,10 +80,15 @@ function Information() {
   )
 
 
+  }
+
+  
 
 
 
-}
+
+
+
 
 
  
