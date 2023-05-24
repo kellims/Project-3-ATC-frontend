@@ -1,7 +1,7 @@
 const URL = "http://localhost:4000"
 
 export const locationsLoader = async () => {
-    const response = await fetch(URL + "/")
+    const response = await fetch(URL + "/locations")
     const locations = await response.json()
     return locations
 }

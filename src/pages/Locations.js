@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 
 
 
-function Locations() {
+function LocationsIndex() {
     const [locations, setLocations] = useState([]);
     const [locationsForm, setLocationsForm] = useState({
         place: "",
@@ -15,7 +15,6 @@ function Locations() {
 
     async function getLocations() {
         try {
-            
             let mylocations = await fetch('http://localhost:4000/locations')
             mylocations = await mylocations.json();
             setLocations(mylocations);
@@ -60,7 +59,7 @@ function Locations() {
     async function handleSumbit(e) {
         try {
             e.preventDefault();
-            await fetch('http://localhost:4000/locations', {
+            await fetch('http://localhost:4000', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -79,7 +78,7 @@ function Locations() {
             <form onSubmit={handleSumbit}>
                 <label>Location Name: </label>
                 <input type="text" name="location" onChange={handleChange} placeholder="Location Name"/>
-                <label>Author: </label>
+                <label>Date of trip: </label>
                 <input type="text" name="date" onChange={handleChange} placeholder="Date of Trip"/>
                 <button>Submit</button>
             </form>
@@ -91,6 +90,6 @@ function Locations() {
 
 
   
-  export default Locations;
+  export default LocationsIndex;
 
 
