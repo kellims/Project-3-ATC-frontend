@@ -3,14 +3,15 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 
+// import { useParams, useNavigate } from 'react-router-dom'
 
 
 function Information() {
-// const locationShow = () = {
+
   const [locationInfo, setLocationInfo] = useState(null)
-  // const { locationsID } = useParams();
+  
   const { id } = useParams()
-  // console.log(locationsID)
+  console.log(id)
  
 
   const URL = `http://localhost:4000/locations/${id}`
@@ -18,14 +19,11 @@ function Information() {
 
   
 
-  // async function fetchLocationInformation() {
+  
     const getLocation = async () => {
     try {
-      // let myLocationInfo = await fetch(`http://localhost:4000/locations/${locationsID}`);
       const response = await fetch(URL);
-      // myLocationInfo = await myLocationInfo.json();
       const result = await response.json()
-      // setLocationInfo(myLocationInfo);
       setLocationInfo(result)
 
     } catch (error) {
@@ -40,7 +38,6 @@ function Information() {
       <>
       <div className="locationInfo">
       <h1>Here's where you'll see all the information about each Location</h1>
-      {/* <h2>{locationInfo.img}</h2> */}
       <img src={locationInfo.img} alt={locationInfo.place+" image"} />
       <h2>Location: {locationInfo.place}</h2>
       <h2>Photo: {locationInfo.date}</h2>
@@ -50,40 +47,24 @@ function Information() {
   }
   
   useEffect(() => {
-    // fetchLocationInformation()
     getLocation()
   }, [])
 
-  // function locationLoaded() {
-  //   return (
-  //     <>
-  //     <h1>Here's where you'll see all the information about each Location</h1>
-  //     <h2>Dates: {locationInfo.img}</h2>
-  //     <h2>Location: {locationInfo.place}</h2>
-  //     <h2>Photo: {locationInfo.date}</h2>
-  //     </>
-  //   )
-  // }
+  
 
   return(
     <>
       {locationInfo ? locationLoaded() : <h2>Loading..</h2>}
     </>
   )
+
+
+
+
+
 }
 
 
-  // if (!locationInfo) {
-  //   return <p>Loading Location information ...</p>
-  // }
-  
-  //   return (
-  //   <>
-  //   <h1>Here's where you'll see all the information about each Location</h1>
-  //   <h2>Dates: {locationInfo.img}</h2>
-  //   <h2>Location: {locationInfo.place}</h2>
-  //   <h2>Photo: {locationInfo.date}</h2>
-  //   </>
-  // )}
+ 
   
   export default Information;
