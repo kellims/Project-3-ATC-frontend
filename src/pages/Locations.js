@@ -10,7 +10,8 @@ function LocationsIndex() {
     const [locations, setLocations] = useState([]);
     const [locationsForm, setLocationsForm] = useState({
         place: "",
-        date: ""
+        date: "",
+        img: ""
     })
 
     async function getLocations() {
@@ -35,6 +36,7 @@ function LocationsIndex() {
                 {arr.map((locations, idx) => {
                     return(
                         <div key={idx}>
+                            <img src={locations.img}></img>
                             <Link to={`/locations/${locations._id}`} key={ locations._id }>
                                 <h2>Location: {locations.place}</h2>
                             </Link>
