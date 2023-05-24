@@ -15,6 +15,7 @@ function Header(props) {
     return (
         <header>
         <h1>A T C</h1>
+        <h3>around the corner</h3>
         <nav style={navStyle}>
           <Link to="/locations">
             <div>Locations</div>

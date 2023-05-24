@@ -56,10 +56,10 @@ function LocationsIndex() {
         }))
     }
 
-    async function handleSumbit(e) {
+    async function handleSubmit(e) {
         try {
             e.preventDefault();
-            await fetch('http://localhost:4000', {
+            await fetch('http://localhost:4000/locations', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -75,9 +75,9 @@ function LocationsIndex() {
 
     return(
         <>
-            <form onSubmit={handleSumbit}>
+            <form onSubmit={handleSubmit}>
                 <label>Location Name: </label>
-                <input type="text" name="location" onChange={handleChange} placeholder="Location Name"/>
+                <input type="text" name="place" onChange={handleChange} placeholder="Location Name"/>
                 <label>Date of trip: </label>
                 <input type="text" name="date" onChange={handleChange} placeholder="Date of Trip"/>
                 <button>Submit</button>
