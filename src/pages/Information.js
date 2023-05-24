@@ -1,45 +1,86 @@
 
 //Show page for each Location
+import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 
-import React, { useState, useEffect } from "react";
+
 
 function Information() {
-  const { locationsID } = useParams();
-  
-  const url = `http://localhost:4000/locations/${locationsID}`
-  console.log(locationsID)
-
+// const locationShow = () = {
   const [locationInfo, setLocationInfo] = useState(null)
+  // const { locationsID } = useParams();
+  const { id } = useParams()
+  // console.log(locationsID)
+ 
 
-
-  const fetchLocationInformation = async () => {
-    try {
-      const response = await fetch(url);
-      const locationInfo = await response.json();
+  const URL = `http://localhost:4000/locations/${id}`
   
-      setLocationInfo(locationInfo);
+
+  
+
+  // async function fetchLocationInformation() {
+    const getLocation = async () => {
+    try {
+      // let myLocationInfo = await fetch(`http://localhost:4000/locations/${locationsID}`);
+      const response = await fetch(URL);
+      // myLocationInfo = await myLocationInfo.json();
+      const result = await response.json()
+      // setLocationInfo(myLocationInfo);
+      setLocationInfo(result)
 
     } catch (error) {
       console.log(error);
     }
-  };
+  }
 
-  
-  useEffect(() => {
-    fetchLocationInformation()
-  }, [])
+  console.log(locationInfo)
 
-  if (!locationInfo) {
-    return <p>Loading Location information ...</p>
+  function locationLoaded() {
+    return (
+      <>
+      <h1>Here's where you'll see all the information about each Location</h1>
+      <h2>Dates: {locationInfo.img}</h2>
+      <h2>Location: {locationInfo.place}</h2>
+      <h2>Photo: {locationInfo.date}</h2>
+      </>
+    )
   }
   
-    return (
+  useEffect(() => {
+    // fetchLocationInformation()
+    getLocation()
+  }, [])
+
+  // function locationLoaded() {
+  //   return (
+  //     <>
+  //     <h1>Here's where you'll see all the information about each Location</h1>
+  //     <h2>Dates: {locationInfo.img}</h2>
+  //     <h2>Location: {locationInfo.place}</h2>
+  //     <h2>Photo: {locationInfo.date}</h2>
+  //     </>
+  //   )
+  // }
+
+  return(
     <>
-    <h1>Here's where you'll see all the information about each Location</h1>
-    <h2>Location: {locationInfo.place}</h2>
-    <h2>Dates: {locationInfo.date}</h2>
+      {locationInfo ? locationLoaded() : <h2>Loading..</h2>}
     </>
-  )}
+  )
+}
+
+
+  // if (!locationInfo) {
+  //   return <p>Loading Location information ...</p>
+  // }
+  
+  //   return (
+  //   <>
+  //   <h1>Here's where you'll see all the information about each Location</h1>
+  //   <h2>Dates: {locationInfo.img}</h2>
+  //   <h2>Location: {locationInfo.place}</h2>
+  //   <h2>Photo: {locationInfo.date}</h2>
+  //   </>
+  // )}
   
   export default Information;

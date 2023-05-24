@@ -11,8 +11,8 @@ function LocationsIndex() {
     const [locationsForm, setLocationsForm] = useState({
         place: "",
         date: "",
-        img: ""
-    })
+        img: "",
+    });
 
     async function getLocations() {
         try {
@@ -35,7 +35,7 @@ function LocationsIndex() {
             <>
                 {arr.map((locations, idx) => {
                     return(
-                        <div key={idx}>
+                        <div key={idx} className='location-tile'>
                             <img src={locations.img}></img>
                             <Link to={`/locations/${locations._id}`} key={ locations._id }>
                                 <h2>Location: {locations.place}</h2>
@@ -77,7 +77,10 @@ function LocationsIndex() {
 
     return(
         <>
+            <section>
+            <h4>Add A New Location</h4>
             <form onSubmit={handleSubmit}>
+                
                 <label>Location Name: </label>
                 <input type="text" name="place" onChange={handleChange} placeholder="Location Name"/>
                 <label>Date of trip: </label>
@@ -86,6 +89,7 @@ function LocationsIndex() {
                 <input type="text" name="img" onChange={handleChange} placeholder="Photo of Location"/>
                 <button>Submit</button>
             </form>
+            </section>
             {locations.length ? loaded(locations) : <h2>Loading...</h2>}
         </>
     )
