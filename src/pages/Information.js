@@ -38,10 +38,13 @@ function Information() {
   function locationLoaded() {
     return (
       <>
+      <div className="locationInfo">
       <h1>Here's where you'll see all the information about each Location</h1>
-      <h2>Dates: {locationInfo.img}</h2>
+      {/* <h2>{locationInfo.img}</h2> */}
+      <img src={locationInfo.img} alt={locationInfo.place+" image"} />
       <h2>Location: {locationInfo.place}</h2>
       <h2>Photo: {locationInfo.date}</h2>
+      </div>
       </>
     )
   }
