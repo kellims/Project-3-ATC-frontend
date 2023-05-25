@@ -18,7 +18,6 @@ function Information() {
 
   
 
-  
     const getLocation = async () => {
     try {
       const response = await fetch(URL);
@@ -52,29 +51,29 @@ function Information() {
 
   // }
 
-  const [editForm, setEditForm] = useState(locationInfo)
+//   const [editForm, setEditForm] = useState(locationInfo)
 
-  const updateLocation = async (e) => {
-    e.preventDefault()
+//   const updateLocation = async (e) => {
+//     e.preventDefault()
 
-    try {
-      await fetch(URL, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(editForm),
-      })
+//     try {
+//       await fetch(URL, {
+//         method: "PUT",
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify(editForm),
+//       })
 
-      getLocation()
-    } catch (err) {
-      console.log(err)
-    }
-  }
+//       getLocation()
+//     } catch (err) {
+//       console.log(err)
+//     }
+//   }
 
-const handleChange = event => {
-      setEditForm({ ...editForm, [event.target.name]: event.target.value })
-}
+// const handleChange = event => {
+//       setEditForm({ ...editForm, [event.target.name]: event.target.value })
+// }
 
 
 
