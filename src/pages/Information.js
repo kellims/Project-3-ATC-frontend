@@ -86,7 +86,10 @@ function Information() {
       <h2>Location: {locationInfo.place}</h2>
       <h2>Photo: {locationInfo.date}</h2>
       <Link to={`/locations/${id}/delete`}>
-                    <button>Delete</button>
+                    <button>Delete this Location</button>
+                </Link>
+      <Link to={`/locations/${id}/edit`}>
+                    <button>Edit this Location</button>
                 </Link>
       </div>
       <section>
