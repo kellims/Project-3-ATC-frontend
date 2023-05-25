@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { useNavigate } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 
 function LocationEdit() {
     const { id } = useParams()
@@ -53,7 +53,9 @@ function loaded() {
                 Place: <input type="text" value={location.place} name="place" onChange={handleChange} />
                 Date: <input type="text" value={location.date} name="date" onChange={handleChange} />
                 Image: <input type="text" value={location.img} name="img" onChange={handleChange} />
+                <Link to={`/locations/${id}`}>
                 <button>Submit</button>
+                </Link>
             </form>
         </>
     )
