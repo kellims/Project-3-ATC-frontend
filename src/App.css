@@ -4,7 +4,7 @@
 
 .location-tile {
   border: 1px solid black;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   justify-content: flex-start;
   text-align: center;
