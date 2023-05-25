@@ -38,7 +38,7 @@ function LocationsIndex() {
                         <div key={idx} className='location-tile'>
                             <img src={locations.img}></img>
                             <Link to={`/locations/${locations._id}`} key={ locations._id }>
-                                <h2>Location: {locations.place}</h2>
+                                <h2>{locations.place}</h2>
                             </Link>
                             <h3>Date: {locations.date}</h3>
             
