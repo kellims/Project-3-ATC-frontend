@@ -31,49 +31,8 @@ function Information() {
 
   console.log(locationInfo)
 
-  // const navigate = useNavigate()
+ 
 
-  // const removeLocation = async () => {
-  //   try {
-  //     const options = {
-  //       method: "DELETE"
-  //     }
-
-  //     const response = await fetch(URL, options)
-  //     const deletedLocation = await response.json()
-  //     console.log(deletedLocation)
-  //     navigate('')
-    
-  //   } catch (error) {
-  //     console.log(error)
-  //     navigate(URL)
-  //   }
-
-  // }
-
-//   const [editForm, setEditForm] = useState(locationInfo)
-
-//   const updateLocation = async (e) => {
-//     e.preventDefault()
-
-//     try {
-//       await fetch(URL, {
-//         method: "PUT",
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify(editForm),
-//       })
-
-//       getLocation()
-//     } catch (err) {
-//       console.log(err)
-//     }
-//   }
-
-// const handleChange = event => {
-//       setEditForm({ ...editForm, [event.target.name]: event.target.value })
-// }
 
 
 
@@ -81,7 +40,7 @@ function Information() {
     return (
       <>
       <div className="locationInfo">
-      <h1>Here's where you'll see all the information about each Location</h1>
+      <h1>Here's all your information about {locationInfo.place}</h1>
       <img src={locationInfo.img} alt={locationInfo.place+" image"} />
       <h2>Location: {locationInfo.place}</h2>
       <h2>Photo: {locationInfo.date}</h2>
