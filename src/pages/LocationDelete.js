@@ -1,23 +1,7 @@
-import { useParams, useNavigate } from "react-router";
+import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 
-// const navigate = useNavigate()
 
-//   const removeLocation = async () => {
-//     try {
-//       const options = {
-//         method: "DELETE"
-//       }
-
-//       const response = await fetch(URL, options)
-//       const deletedLocation = await response.json()
-//       console.log(deletedLocation)
-//       navigate('')
-    
-//     } catch (error) {
-//       console.log(error)
-//       navigate(URL)
-//     }
 
 function RemoveLocation() {
     const { id } = useParams()
