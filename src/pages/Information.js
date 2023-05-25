@@ -1,7 +1,8 @@
 
 //Show page for each Location
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 
 function Information() {
@@ -31,25 +32,51 @@ function Information() {
 
   console.log(locationInfo)
 
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
-  const removeLocation = async () => {
-    try {
-      const options = {
-        method: "DELETE"
-      }
+  // const removeLocation = async () => {
+  //   try {
+  //     const options = {
+  //       method: "DELETE"
+  //     }
 
-      const response = await fetch(URL, options)
-      const deletedLocation = await response.json()
-      console.log(deletedLocation)
-      navigate('')
+  //     const response = await fetch(URL, options)
+  //     const deletedLocation = await response.json()
+  //     console.log(deletedLocation)
+  //     navigate('')
     
-    } catch (error) {
-      console.log(error)
-      navigate(URL)
-    }
+  //   } catch (error) {
+  //     console.log(error)
+  //     navigate(URL)
+  //   }
 
+  // }
+
+  const [editForm, setEditForm] = useState(locationInfo)
+
+  const updateLocation = async (e) => {
+    e.preventDefault()
+
+    try {
+      await fetch(URL, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(editForm),
+      })
+
+      getLocation()
+    } catch (err) {
+      console.log(err)
+    }
   }
+
+const handleChange = event => {
+      setEditForm({ ...editForm, [event.target.name]: event.target.value })
+}
+
+
 
   function locationLoaded() {
     return (
@@ -59,10 +86,14 @@ function Information() {
       <img src={locationInfo.img} alt={locationInfo.place+" image"} />
       <h2>Location: {locationInfo.place}</h2>
       <h2>Photo: {locationInfo.date}</h2>
-      <div>
-        <button className="delete" onClick={removeLocation}> Remove Location</button>
+      <Link to={`/locations/${id}/delete`}>
+                    <button>Delete</button>
+                </Link>
       </div>
-      </div>
+      <section>
+
+	
+</section>
       </>
     )
   }
