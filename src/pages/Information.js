@@ -13,7 +13,7 @@ function Information() {
   console.log(id)
  
 
-  const URL = `http://localhost:4000/locations/${id}`
+  const URL = `https://atc-backend2.onrender.com/locations/${id}`
   
 
   

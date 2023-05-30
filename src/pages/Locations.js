@@ -16,7 +16,7 @@ function LocationsIndex() {
 
     async function getLocations() {
         try {
-            let mylocations = await fetch('http://localhost:4000/locations')
+            let mylocations = await fetch('https://atc-backend2.onrender.com/locations')
             mylocations = await mylocations.json();
             setLocations(mylocations);
         } catch(err) {
@@ -61,7 +61,7 @@ function LocationsIndex() {
     async function handleSubmit(e) {
         try {
             e.preventDefault();
-            await fetch('http://localhost:4000/locations', {
+            await fetch('https://atc-backend2.onrender.com/locations', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

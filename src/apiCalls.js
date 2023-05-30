@@ -1,4 +1,4 @@
-const URL = "http://localhost:4000"
+const URL = "https://atc-backend2.onrender.com"
 
 export const locationsLoader = async () => {
     const response = await fetch(URL + "/locations")

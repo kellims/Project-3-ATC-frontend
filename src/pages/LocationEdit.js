@@ -10,7 +10,7 @@ function LocationEdit() {
 
   async function updateLocation() {
     try {
-        let myLocation = await fetch(`http://localhost:4000/locations/${id}`)
+        let myLocation = await fetch(`https://atc-backend2.onrender.com/locations/${id}`)
         myLocation = await myLocation.json()
         setLocation(myLocation)
     }   catch(error) {
@@ -31,7 +31,7 @@ function handleChange(e) {
 async function handleSubmit(e) {
     try {
         e.preventDefault();
-        await fetch(`http://localhost:4000/locations/${id}`, {
+        await fetch(`https://atc-backend2.onrender.com/locations/${id}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",

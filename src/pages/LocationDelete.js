@@ -7,7 +7,7 @@ function RemoveLocation() {
     const { id } = useParams()
 async function removethisLocation() {
     try {
-        await fetch(`http://localhost:4000/locations/${id}`, {
+        await fetch(`https://atc-backend2.onrender.com/locations/${id}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json"
