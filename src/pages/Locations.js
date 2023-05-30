@@ -36,7 +36,7 @@ function LocationsIndex() {
                 {arr.map((locations, idx) => {
                     return(
                         <div key={idx} className='location-tile'>
-                            <img src={locations.img}></img>
+                            <img src={locations.img} alt="https://www.google.com/imgres?imgurl=https%3A%2F%2Fcontent.presspage.com%2Fuploads%2F2431%2F1920_emiratesrampsupglobaloperations.png%3F10000&tbnid=TiV_YpLEZ8TFRM&vet=12ahUKEwiQ55Dejp7_AhV5H94AHZYvC-QQMygLegUIARCDAg..i&imgrefurl=https%3A%2F%2Fwww.emirates.com%2Fmedia-centre%2Femirates-ramps-up-global-operations-with-restart-of-services-to-four-destinations%2F&docid=s3_Ex07V-bDB3M&w=1800&h=1200&q=Emirates%20Airplane%20Photo&ved=2ahUKEwiQ55Dejp7_AhV5H94AHZYvC-QQMygLegUIARCDAg"></img>
                             <Link to={`/locations/${locations._id}`} key={ locations._id }>
                                 <h2>{locations.place}</h2>
                             </Link>

@@ -2,7 +2,6 @@
 import './App.css';
 
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
 import Locations from "./pages/Locations";
 import Information from "./pages/Information";
 import LocationEdit from "./pages/LocationEdit";

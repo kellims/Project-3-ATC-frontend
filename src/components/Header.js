@@ -2,28 +2,21 @@ import { Link } from "react-router-dom";
 
 function Header(props) {
 
-    const navStyle = {
-        display: "flex",
-        justifyContent: "space-around",
-        border: "3px solid black",
-        padding: "8px",
-        width: "90%",
-        margin: "auto",
-      };
 
 
     return (
         <header>
             <div className="AppName">
-        <h1>A T C</h1>
-        <h3>around the corner</h3>
-        </div>
-        <nav style={navStyle}>
+                <h1>A T C</h1>
+                <h3>around the corner</h3>
+            </div>
+        {/* <nav style={navStyle}> */}
+        <nav className="Nav">
           <Link to="/locations">
             <div>Locations</div>
           </Link>
-    
-        </nav>
+          </nav>
+        {/* </nav> */}
       </header>
     );
   }
