@@ -10,7 +10,11 @@ As an avid travel planner, I'm often collecting ideas and recommendations for tr
 
 ## User Stories
 
+ - As a user, I want a place to store all my plans and ideas for trips around the corner (future or yet to be booked trips), because I want all of the research and work easily available when the trip is ready to be booked.
 
+ - As a user, I want to organize my trips by location.
+
+ - As a user, I want to be able to add and edit new trip locations.
 
 
 
