@@ -16,7 +16,11 @@ As an avid travel planner, I'm often collecting ideas and recommendations for tr
 
  - As a user, I want to be able to add and edit new trip locations.
 
+## Future Features
 
+- As a user, I want to categorize activities for each location such as day trips, site seeing locations, restaurants, etc.
+
+- As a user, I want to be able to add and edit new to-do's for each location.
 
 
 ## Trello Board: 
