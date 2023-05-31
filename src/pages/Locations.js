@@ -40,7 +40,7 @@ function LocationsIndex() {
                             <Link to={`/locations/${locations._id}`} key={ locations._id }>
                                 <h2>{locations.place}</h2>
                             </Link>
-                            <h3>Date: {locations.date}</h3>
+                            <h3>When: {locations.date}</h3>
             
                             <hr />
                         </div>
@@ -83,7 +83,7 @@ function LocationsIndex() {
                 
                 <label>Location Name: </label>
                 <input type="text" name="place" onChange={handleChange} placeholder="Location Name"/>
-                <label>Date of trip: </label>
+                <label>When is this trip: </label>
                 <input type="text" name="date" onChange={handleChange} placeholder="Date of Trip"/>
                 <label>Photo: </label>
                 <input type="text" name="img" onChange={handleChange} placeholder="Photo of Location"/>

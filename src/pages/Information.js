@@ -43,7 +43,7 @@ function Information() {
       <h1>Here's all your information about {locationInfo.place}</h1>
       <img src={locationInfo.img} alt={locationInfo.place+" image"} />
       <h2>Location: {locationInfo.place}</h2>
-      <h2>Photo: {locationInfo.date}</h2>
+      <h2>When: {locationInfo.date}</h2>
       <Link to={`/locations/${id}/delete`}>
                     <button>Delete this Location</button>
                 </Link>
@@ -75,13 +75,6 @@ function Information() {
   }
 
   
-
-
-
-
-
-
-
 
  
   
