@@ -2,7 +2,7 @@
 
 ## Depoloyed Site:
 
-Around The Corner: https://main--creative-donut-5a186d.netlify.app/locations
+Around The Corner: https://main--creative-donut-5a186d.netlify.app/
 
 ## What Problem Am I Solving?
 
